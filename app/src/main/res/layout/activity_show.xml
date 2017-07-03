@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.mono.superkinoapp.ShowActivity"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/chooseShowView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            app:srcCompat="@drawable/wybierz_seans" />
+
+        <RelativeLayout
+            android:id="@+id/showTitleAndGenre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/chooseShowView"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="6dp">
+
+            <TextView
+                android:id="@+id/showTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="5dp"
+                android:textColor="#9453D3"
+                android:textSize="24sp"
+                tools:text="Tytuł" />
+
+            <TextView
+                android:id="@+id/showGenre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/showTitle"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="2dp"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:textColor="#9453D3"
+                android:textSize="18sp"
+                tools:text="Gatunek" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/show_filmImage"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/showTitleAndGenre"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/z_logiem" />
+
+        <TextView
+            android:id="@+id/descriptionView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/show_filmImage"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/show_filmImage"
+            android:layout_toRightOf="@+id/show_filmImage"
+            android:text="opis"
+            android:textColor="#9453D3" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_height="2dp"
+        android:layout_width="fill_parent"
+        android:background="#9453D3" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioGroup
+            android:id="@+id/timeButtons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp">
+
+            <RadioButton
+                    android:id="@+id/timeButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="15:00"
+                    android:textColor="#9453D3"
+                    android:buttonTint="#9453D3" android:checked="false"/>
+
+            <RadioButton
+                android:id="@+id/timeButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/timeButton"
+                android:buttonTint="#9453D3"
+                android:text="17:00"
+                android:textColor="#9453D3" />
+
+            <RadioButton
+                android:id="@+id/timeButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/timeButton2"
+                android:text="19:00"
+                android:textColor="#9453D3"
+                android:buttonTint="#9453D3" />
+
+            <RadioButton
+                android:id="@+id/timeButton4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/timeButton3"
+                android:text="21:00"
+                android:textColor="#9453D3"
+                android:buttonTint="#9453D3" />
+
+        </RadioGroup>
+
+
+
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/nextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop ="20dp"
+        android:adjustViewBounds="true"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/dalej" />
+
+</LinearLayout>

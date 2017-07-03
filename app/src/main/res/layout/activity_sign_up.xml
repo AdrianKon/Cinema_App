@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@drawable/z_logiem"
+    android:layout_height="match_parent"><![CDATA[
+
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    ]]>
+    <EditText
+        android:id="@+id/surnameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/nameText"
+        android:layout_alignStart="@+id/nameText"
+        android:layout_below="@+id/nameText"
+        android:layout_marginTop="11dp"
+        android:ems="10"
+        android:hint="nazwisko"
+        android:inputType="textPersonName"
+        android:textColor="@android:color/white" />
+
+    <CheckBox
+        android:id="@+id/rememberCheckBox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_alignLeft="@+id/surnameText"
+        android:layout_alignStart="@+id/imageView4"
+        android:layout_below="@+id/imageView4"
+        android:text="pamietaj mnie"
+        android:buttonTint="@android:color/white"
+        android:textColor="@android:color/white" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/emailText2"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_toLeftOf="@+id/emailText2"
+        android:layout_toStartOf="@+id/emailText2"
+        app:srcCompat="@drawable/czlowiek" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/passwordText2"
+        android:layout_alignLeft="@+id/imageView"
+        android:layout_alignStart="@+id/imageView"
+        app:srcCompat="@drawable/klodka" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/czlowiek"
+        android:layout_alignBottom="@+id/nameText"
+        android:layout_alignRight="@+id/imageView2"
+        android:layout_alignEnd="@+id/imageView2" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/czlowiek"
+        android:layout_alignBottom="@+id/surnameText"
+        android:layout_alignLeft="@+id/imageView3"
+        android:layout_alignStart="@+id/imageView3" />
+
+    <ImageButton
+        android:id="@+id/signupButton2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rememberCheckBox2"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="21dp"
+        android:adjustViewBounds="true"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/zarejestruj2" />
+    <EditText
+            android:id="@+id/nameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:ems="10"
+            android:hint="imię"
+            android:inputType="textPersonName"
+            android:textColor="@android:color/white" android:layout_below="@+id/passwordText2"
+            android:layout_alignStart="@+id/passwordText2"/>
+    <EditText
+            android:id="@+id/emailText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="168dp"
+            android:ems="10"
+            android:hint="e-mail"
+
+            android:inputType="textEmailAddress"
+            android:textColor="@android:color/white" android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"/>
+    <EditText
+            android:id="@+id/passwordText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:ems="10"
+            android:hint="hasło"
+            android:inputType="textPassword"
+            android:textColor="@android:color/white" android:layout_below="@+id/emailText2"
+            android:layout_toEndOf="@+id/imageView"/>
+
+
+</RelativeLayout>

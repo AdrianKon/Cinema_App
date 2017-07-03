@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <excludeFromCompile>
+      <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/mono/superkinoapp/LoginActivity.java" />
+      <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/mono/superkinoapp/Repertuar.java" />
+    </excludeFromCompile>
+  </component>
+</project>
