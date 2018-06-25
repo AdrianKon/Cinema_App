@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import databaseHandler.HttpHandler;
+import databaseTools.DBManager;
 
 /**
  * Created by tfqo on 15.06.2017.
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        DBManager.init(this);
         setContentView(R.layout.activity_main);
         buttonLogin = (ImageButton) findViewById(R.id.loginButton);
         buttonRegister = (ImageButton) findViewById(R.id.signupButton);
@@ -33,9 +35,7 @@ public class MainActivity extends AppCompatActivity {
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String url = "http://"+getString(R.string.ip_address)+"/php/loginCheck.php?email="+ editTextEmail.getText().toString() + "&password=" + editTextPassword.getText().toString();
-                System.out.println(url);
-                new ExecuteRequest().execute(url);
+
             }
         });
         buttonRegister.setOnClickListener(new View.OnClickListener() {
@@ -49,38 +49,5 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    private class ExecuteRequest extends AsyncTask<String,Void, Void> {
-        String resultQ = "";
 
-        @Override
-        protected Void doInBackground(String... strings) {
-            HttpHandler sh = new HttpHandler();
-            String result = sh.makeServiceCall(strings[0]);
-            //System.out.println(result);
-            setResultQ(result);
-            return null;
-        }
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-
-        }
-
-        @Override
-        protected void onPostExecute(Void result) {
-            super.onPostExecute(result);
-            if (resultQ.contains("true")){
-                Intent intent = new Intent(getApplicationContext(), MoviesActivity.class);
-                startActivity(intent);
-            }
-        }
-        public void setResultQ(String resultQ) {
-            this.resultQ = resultQ;
-        }
-
-        public String getResultQ() {
-            return resultQ;
-        }
-    }
 }
