@@ -9,7 +9,8 @@ import java.util.Date;
 
 @DatabaseTable
 public class Screening {
-
+    @DatabaseField(generatedId = true)
+    private int screeningId;
     @DatabaseField(dataType = DataType.DATE)
     private Date date;
     @DatabaseField(dataType = DataType.DATE_TIME)
@@ -49,5 +50,13 @@ public class Screening {
 
     public Movie getMovie() {
         return movie;
+    }
+
+    public int getScreeningId() {
+        return screeningId;
+    }
+
+    public void setScreeningId(int screeningId) {
+        this.screeningId = screeningId;
     }
 }

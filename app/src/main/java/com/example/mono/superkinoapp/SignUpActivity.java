@@ -40,7 +40,7 @@ public class SignUpActivity extends AppCompatActivity {
                 String surname = editTextSurname.getText().toString();
                 if (!email.isEmpty() && !password.isEmpty() && !name.isEmpty() && !surname.isEmpty()){
                    //adding to the database
-                    DBManager.getInstance().
+                    //DBManager.getInstance().
                 }
             }
         });

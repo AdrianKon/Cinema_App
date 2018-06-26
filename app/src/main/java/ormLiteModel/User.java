@@ -10,7 +10,7 @@ import java.util.ArrayList;
 @DatabaseTable
 public class User {
     @DatabaseField(generatedId = true)
-    private int id;
+    private int userId;
     @DatabaseField
     private String email;
     @DatabaseField
@@ -22,12 +22,12 @@ public class User {
     @ForeignCollectionField
     private ForeignCollection<Ticket> tickets;
 
-    public void setId(int id) {
-        this.id = id;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
-    public int getId() {
-        return id;
+    public int getUserId() {
+        return userId;
     }
 
     public void setEmail(String email) {

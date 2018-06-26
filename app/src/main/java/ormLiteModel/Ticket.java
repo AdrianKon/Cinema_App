@@ -9,6 +9,8 @@ import java.util.ArrayList;
 
 @DatabaseTable
 public class Ticket {
+    @DatabaseField(generatedId = true)
+    private int ticketId;
     @DatabaseField
     private Screening screening;
     @DatabaseField
@@ -42,5 +44,13 @@ public class Ticket {
             seatsList.add(seat);
         }
         return seatsList;
+    }
+
+    public int getTicketId() {
+        return ticketId;
+    }
+
+    public void setTicketId(int ticketId) {
+        this.ticketId = ticketId;
     }
 }
