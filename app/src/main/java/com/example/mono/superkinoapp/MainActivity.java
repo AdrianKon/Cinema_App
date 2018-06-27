@@ -5,13 +5,19 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
+import android.support.design.widget.Snackbar;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import databaseHandler.HttpHandler;
 import databaseTools.DBManager;
+import ormLiteModel.User;
+
+import java.util.List;
 
 /**
  * Created by tfqo on 15.06.2017.
@@ -35,6 +41,16 @@ public class MainActivity extends AppCompatActivity {
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                List<User> userList = DBManager.getInstance().getAllUsers();
+                User loggingUser = new User();
+                loggingUser.setEmail(editTextEmail.getText().toString());
+                loggingUser.setPassword(editTextPassword.getText().toString());
+                if (loggingUser.isExisting(userList)){
+                    Intent intent = new Intent(getApplicationContext(), MoviesActivity.class);
+                    startActivity(intent);
+                }else {
+                    Snackbar.make(v,"Dany użytkownik nie istnieje", Snackbar.LENGTH_SHORT).show();
+                }
 
             }
         });

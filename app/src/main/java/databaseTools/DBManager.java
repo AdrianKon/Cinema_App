@@ -1,6 +1,10 @@
 package databaseTools;
 
 import android.content.Context;
+import ormLiteModel.User;
+
+import java.sql.SQLException;
+import java.util.List;
 
 public class DBManager {
     private static DBManager instance;
@@ -23,6 +27,22 @@ public class DBManager {
         return helper;
     }
 
-    // add there getters for Dao as lists of lines in tables
+    public void addUser(User user){
+        try {
+            getHelper().getUserDao().create(user);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public List<User> getAllUsers(){
+        List<User> userList = null;
+        try {
+            userList = getHelper().getUserDao().queryForAll();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return userList;
+    }
 
 }

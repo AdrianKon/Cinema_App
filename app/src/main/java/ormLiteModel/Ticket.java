@@ -12,18 +12,18 @@ public class Ticket {
     @DatabaseField(generatedId = true)
     private int ticketId;
     @DatabaseField
-    private Screening screening;
+    private int screeningId;
     @DatabaseField
     private int seatsAvailable;
     @ForeignCollectionField
     private ForeignCollection<Integer> seats;
 
-    public void setScreening(Screening screening) {
-        this.screening = screening;
+    public void setScreening(int screening) {
+        this.screeningId = screening;
     }
 
-    public Screening getScreening() {
-        return screening;
+    public int getScreening() {
+        return screeningId;
     }
 
     public void setSeatsAvailable(int seatsAvailable) {

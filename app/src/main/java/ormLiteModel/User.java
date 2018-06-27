@@ -6,6 +6,7 @@ import com.j256.ormlite.field.ForeignCollectionField;
 import com.j256.ormlite.table.DatabaseTable;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @DatabaseTable
 public class User {
@@ -19,8 +20,18 @@ public class User {
     private String name;
     @DatabaseField
     private String surname;
-    @ForeignCollectionField
-    private ForeignCollection<Ticket> tickets;
+    //@ForeignCollectionField()
+    //private ForeignCollection<Ticket> tickets;
+
+    public User(){}
+
+    public User(final String email, final String password, final String name, final String surname/*, final List<Ticket> tickets*/){
+        this.email = email;
+        this.password = password;
+        this.name = name;
+        this.surname = surname;
+        //this.tickets = (ForeignCollection<Ticket>) tickets;
+    }
 
     public void setUserId(int userId) {
         this.userId = userId;
@@ -62,15 +73,24 @@ public class User {
         return surname;
     }
 
-    public void setTickets(ForeignCollection<Ticket> tickets) {
-        this.tickets = tickets;
-    }
+//    public void setTickets(ForeignCollection<Ticket> tickets) {
+//        this.tickets = tickets;
+//    }
+//
+//    public ArrayList<Ticket> getTickets() {
+//        ArrayList<Ticket> ticketsList = new ArrayList<Ticket>();
+//        for (Ticket ticket : tickets) {
+//            ticketsList.add(ticket);
+//        }
+//        return ticketsList;
+//    }
 
-    public ArrayList<Ticket> getTickets() {
-        ArrayList<Ticket> ticketsList = new ArrayList<Ticket>();
-        for (Ticket ticket : tickets) {
-            ticketsList.add(ticket);
+
+    public boolean isExisting(List<User> users) {
+        for (User forUser :
+                users) {
+            if (this.email == forUser.email && this.password == forUser.password) return true;
         }
-        return ticketsList;
+        return false;
     }
 }

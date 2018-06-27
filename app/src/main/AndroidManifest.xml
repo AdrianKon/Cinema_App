@@ -7,8 +7,9 @@
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
             android:supportsRtl="true"
-            android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+            android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".MainActivity"
+                  android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -19,6 +20,7 @@
         <activity android:name=".SeatsActivity"></activity>
         <activity android:name=".ShowActivity"></activity>
         <activity android:name=".SignUpActivity"></activity>
+        android:theme="@android:style/Theme.NoTitleBar"
     </application>
     <uses-permission android:name="android.permission.INTERNET"/>
 </manifest>
