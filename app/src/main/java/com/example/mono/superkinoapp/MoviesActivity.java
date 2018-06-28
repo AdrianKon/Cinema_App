@@ -143,6 +143,12 @@ public class MoviesActivity extends AppCompatActivity {
             }
         }
 
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
+    }
+
     private class ExecuteRequest extends AsyncTask<String,Void, Void> {
         String resultQ = "";
 

@@ -87,9 +87,8 @@ public class User {
 
 
     public boolean isExisting(List<User> users) {
-        for (User forUser :
-                users) {
-            if (this.email == forUser.email && this.password == forUser.password) return true;
+        for (User forUser : users) {
+            if (this.email.equals(forUser.email) && this.password.equals(forUser.password)) return true;
         }
         return false;
     }
