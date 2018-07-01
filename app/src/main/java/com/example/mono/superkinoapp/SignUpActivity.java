@@ -25,20 +25,16 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by tfqo on 17.06.2017.
- */
 public class SignUpActivity extends AppCompatActivity {
     EditText editTextEmail, editTextPassword,editTextName,editTextSurname;
     ImageButton imageButtonRegister;
     CheckBox rememberMeCheckBox2;
     SharedPreferences sharedPreferences;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) throws NullPointerException {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-
-        //final DBHelper dbHelper = new DBHelper(this);
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         editTextEmail = (EditText) findViewById(R.id.emailText2);
         editTextPassword = (EditText) findViewById(R.id.passwordText2);
@@ -54,28 +50,21 @@ public class SignUpActivity extends AppCompatActivity {
                 String password = editTextPassword.getText().toString();
                 String name = editTextName.getText().toString();
                 String surname = editTextSurname.getText().toString();
-                if (rememberMeCheckBox2.isChecked()) {
-                    sharedPreferences.edit().putString("rememberedEmail", email).apply();
-                }
+
+                if (rememberMeCheckBox2.isChecked()) sharedPreferences.edit().putString("rememberedEmail", email).apply();
+
                 if (!email.isEmpty() && !password.isEmpty() && !name.isEmpty() && !surname.isEmpty()){
-                   //adding to the database
                     final User user = new User(email, password, name, surname);
                     if (user.isExisting(DBManager.getInstance().getAllUsers())) {
                         DBManager.getInstance().addUser(user);
                         Intent intent = new Intent(getApplicationContext(), MoviesActivity.class);
                         startActivity(intent);
                     } else Snackbar.make(v,"Dany użytkownik już istnieje", Snackbar.LENGTH_SHORT).show();
-
-
                 }else {
                     Snackbar.make(v,"Wypełnij wszystkie pola", Snackbar.LENGTH_SHORT).show();
                 }
-
             }
         });
     }
-
-
-
 }
 

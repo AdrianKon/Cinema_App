@@ -51,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
         editTextPassword = (EditText) findViewById(R.id.passwordText);
         rememberMeCheckBox = (CheckBox) findViewById(R.id.rememberCheckBox);
 
+        DBManager.getInstance().deleteUser("jakis@jakis.com");
+
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

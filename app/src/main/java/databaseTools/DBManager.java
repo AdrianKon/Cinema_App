@@ -4,6 +4,7 @@ import android.content.Context;
 import ormLiteModel.User;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class DBManager {
@@ -43,6 +44,18 @@ public class DBManager {
             e.printStackTrace();
         }
         return userList;
+    }
+
+    public void deleteUser(String email){
+        List<User> userList = new ArrayList<>();
+        try {
+             userList = getHelper().getUserDao().queryForEq("email",email);
+            for (User user: userList) {
+                getHelper().getUserDao().delete(user);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 }
